@@ -49,12 +49,13 @@ This project simulates the behavior of a lightweight Host-Based Intrusion Detect
 
 ## 📂 Project Structure
 
-Secure-File-Transfer-Monitoring-System │ ├── config.py        # Configuration and sensitive file list
+Secure-File-Transfer-Monitoring-System  
+├── config.py        # Configuration and sensitive file list
 ├── monitor.py       # Monitoring engine and alert logic
 ├── logs/
 │   └── activity.log # Security audit log
 ├── monitored/       # Protected directory
-├── screenshots/    # Execution evidence
+├── screenshots/     # Execution evidence
 └── reports/         # Final project documentation
 
 ---
@@ -73,6 +74,22 @@ Secure-File-Transfer-Monitoring-System │ ├── config.py        # Configur
 4. Perform file operations inside the `monitored` directory and observe alerts and log entries.
 
 ---
+
+## 📸 Execution Screenshots  
+
+Below are key execution proofs captured during testing:
+
+### 1️⃣ Monitoring Service Started  
+![](screenshots/1_monitoring_started.png)
+
+### 2️⃣ Normal File Creation Detected  
+![](screenshots/2_normal_file_created.png)
+
+### 3️⃣ Sensitive File Alert Triggered  
+![](screenshots/3_sensitive_file_alert.png)
+
+### 4️⃣ Activity Log with Integrity Verification  
+![](screenshots/4_activity_log.png)
 
 ## 🧪 Testing and Validation  
 

@@ -1,0 +1,210 @@
+SECURE FILE TRANSFER MONITORING SYSTEM  
+Internship Project Final Report  
+
+Submitted by: Naba Hanfi  
+Organization: Unified Mentor  
+Domain: Cyber Security  
+Date: 22 January 2026  
+
+------------------------------------------------------------
+
+1. INTRODUCTION  
+
+In modern digital environments, secure handling and monitoring of sensitive files is a critical requirement. Unauthorized modification, deletion, or movement of confidential files can lead to serious security breaches, data leakage, and compliance violations.  
+
+The Secure File Transfer Monitoring System is a Python-based cybersecurity application designed to continuously monitor a specified directory and detect all file activities in real time. The system identifies normal file operations as well as suspicious activity involving sensitive files and generates immediate alerts along with detailed log records.  
+
+This project demonstrates the practical implementation of file integrity monitoring and security auditing techniques used in real-world enterprise security systems.  
+
+------------------------------------------------------------
+
+2. PROJECT OBJECTIVE  
+
+The main objectives of this project are:  
+
+• To monitor a specific directory continuously for file system changes.  
+• To detect creation, modification, movement, and deletion of files.  
+• To identify sensitive files and generate security alerts when they are accessed or modified.  
+• To calculate cryptographic hash values for file integrity verification.  
+• To maintain detailed activity logs for auditing and forensic analysis.  
+
+------------------------------------------------------------
+
+3. SYSTEM FEATURES  
+
+The Secure File Transfer Monitoring System provides the following features:  
+
+• Real-time directory monitoring using the Watchdog library  
+• Detection of file creation, modification, movement, and deletion events  
+• Identification of predefined sensitive files  
+• Alert generation for sensitive file access  
+• SHA-256 hash calculation for integrity verification  
+• Integrity status verification (OK / FAILED)  
+• User identification for each event  
+• Detailed logging in an activity log file  
+
+------------------------------------------------------------
+
+4. TECHNOLOGIES AND TOOLS USED  
+
+Programming Language: Python 3.14  
+Operating System: Windows 11  
+Libraries and Modules:  
+• watchdog – for real-time file monitoring  
+• hashlib – for cryptographic hash generation  
+• logging – for system logging  
+• os – for file and directory operations  
+• getpass – for user identification  
+
+Development Environment:  
+• Windows PowerShell  
+• Visual Studio Code / Text Editor  
+
+------------------------------------------------------------
+
+5. PROJECT STRUCTURE  
+
+The project directory structure is organized as follows:  
+
+Secure-File-Transfer-Monitoring-System  
+│  
+├── config.py  
+├── monitor.py  
+├── logs/  
+│    └── activity.log  
+├── monitored/  
+├── screenshots/  
+└── reports/  
+
+------------------------------------------------------------
+
+6. WORKING METHODOLOGY  
+
+The system works by continuously observing a specified folder named “monitored”.  
+
+When the monitoring service is started, the program performs the following operations:  
+
+• Initializes logging configuration and creates the logs directory if not present  
+• Starts observing the monitored directory using a filesystem observer  
+• Detects file events such as create, modify, move, and delete  
+• Checks whether the affected file belongs to the sensitive file list  
+• Generates alerts for sensitive file activity  
+• Computes SHA-256 hash values for integrity checking  
+• Logs all events with timestamps, usernames, file paths, and status  
+
+------------------------------------------------------------
+
+7. IMPLEMENTATION DETAILS  
+
+The core implementation consists of two Python files:  
+
+config.py  
+This file contains configuration parameters such as:  
+• Monitored folder path  
+• List of sensitive file names  
+• Log file location  
+
+monitor.py  
+This file contains the main monitoring logic including:  
+• Observer initialization  
+• Event handling functions  
+• Hash calculation function  
+• Integrity verification function  
+• Alert and logging mechanisms  
+
+------------------------------------------------------------
+
+8. ALERT AND LOGGING MECHANISM  
+
+Whenever a sensitive file is accessed or modified, the system generates a security alert in the console and logs a warning entry in the activity log file.  
+
+Example alert format:  
+
+[ALERT] Sensitive file secret.txt MODIFIED  
+
+The activity log records the following information:  
+
+• Timestamp  
+• Event type  
+• Username  
+• File path  
+• Sensitivity status  
+• Hash value  
+• Integrity check result  
+
+This provides a complete audit trail for forensic and compliance purposes.  
+
+------------------------------------------------------------
+
+9. TESTING AND RESULTS  
+
+During testing, the following scenarios were performed successfully:  
+
+• Creation of a normal file – detected and logged  
+• Creation of a sensitive file – alert generated  
+• Modification of a sensitive file – alert generated  
+• Movement and deletion of files – detected and logged  
+• Integrity verification – successful hash validation  
+
+All events were correctly recorded in the activity.log file and displayed in the console output.  
+
+------------------------------------------------------------
+
+10. SECURITY SIGNIFICANCE  
+
+This project demonstrates key cybersecurity concepts such as:  
+
+• File integrity monitoring  
+• Intrusion detection through file activity tracking  
+• Real-time alert generation  
+• Audit logging and forensic readiness  
+
+Such systems are widely used in:  
+
+• Enterprise security monitoring  
+• Data loss prevention systems  
+• Compliance auditing (ISO 27001, SOC, HIPAA, PCI-DSS)  
+• Insider threat detection  
+
+------------------------------------------------------------
+
+11. LIMITATIONS  
+
+• The system currently monitors only a single directory  
+• Sensitive file detection is based on filename matching  
+• No graphical user interface is implemented  
+• Network-based file transfer monitoring is not included  
+
+------------------------------------------------------------
+
+12. FUTURE ENHANCEMENTS  
+
+The project can be further enhanced by adding:  
+
+• Recursive monitoring of multiple directories  
+• Pattern-based sensitive data detection  
+• Email or SMS alert notifications  
+• Centralized log server integration  
+• Web-based monitoring dashboard  
+• Encryption verification for transferred files  
+
+------------------------------------------------------------
+
+13. CONCLUSION  
+
+The Secure File Transfer Monitoring System successfully implements a real-time file monitoring and alert mechanism for sensitive data protection. The project demonstrates practical cybersecurity skills including file integrity checking, security logging, and intrusion detection concepts.  
+
+This system can be extended into a full-scale enterprise file security solution and serves as a strong foundation for advanced cybersecurity applications.  
+
+------------------------------------------------------------
+
+14. REFERENCES  
+
+• Python Watchdog Documentation  
+• NIST File Integrity Monitoring Guidelines  
+• Georgia Weidman – Penetration Testing and Security Research  
+• Python Official Documentation  
+
+------------------------------------------------------------
+
+END OF REPORT
